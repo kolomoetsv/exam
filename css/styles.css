@@ -80,10 +80,15 @@ a {
 	opacity: 0;
 }
 
+
+
+
 .menu-list {
 	position: relative;
 }
 
+.menu-list.is-active::before,
+.menu-list.is-active::after,
 .menu-list:hover::before,
 .menu-list:hover::after, 
 .menu-list:active::before,
@@ -135,21 +140,21 @@ a {
 
 
 
-input[type=search] {
+.search-header-form {
 	-webkit-appearance: none;
 	background: transparent;
 	box-sizing: border-box;
 	border: none;
 	border-bottom: 1px solid #bfbdd9;
-	max-width: 300px;
-	opacity: 0.3;
+	width: 395px;
+	color: #000;
 }
 
-input[type=search]:focus {
+.search-header-form:focus {
 	outline: none;
 }
 
-button[type=submit] {
+.button-header-form {
 	padding: 0;
 	border: none;
 	font: inherit;
@@ -339,6 +344,7 @@ iframe {
 	opacity: 0.67;
 	margin-right: auto;
 	margin-left: auto;
+	z-index: -1;
 }
 
 .peno {
@@ -353,6 +359,7 @@ iframe {
 	font-family: Arial sans-serif 14px;
 	text-align: center;
 	max-width: 890px;
+	padding-bottom: 30px;
 }
 
 .more-button {
@@ -368,7 +375,7 @@ iframe {
 	background-image: url('../image/pattern.png');
     background-repeat: repeat;
     font-weight: bold;
-    margin: 45px 0 25px 0;
+    margin: 15px 0 25px 0;
     text-align: center;
 
 }
@@ -419,7 +426,7 @@ iframe {
 	max-width: 610px;
 	min-width: 610px;
 	min-height: 310px;
-	text-align: right;
+	text-align: left;
 	background-color: rgba(0,0,0,0.6);
 	position: relative;
 }
@@ -428,7 +435,7 @@ iframe {
 	font-size: 24px;
 	text-transform: uppercase;
 	color: #fff;
-	padding: 25px 50px 0 0;
+	padding: 25px 50px 0 50px;
 
 }
 
@@ -437,7 +444,7 @@ iframe {
 	text-transform: uppercase;
 	color: #fff;
 	background-color: #01983b;
-	padding-right: 50px;
+	padding:0 50px;
 	margin-top: 6px;
 }
 
@@ -629,14 +636,21 @@ iframe {
 	min-width: 365px;
 }
 
-
+.tasks-table tr td:first-child::before {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	height: 50px;
+	width: 60px;
+	background-color: #ff0000;
+	opacity: 0.5;
+}
 
 .tasks-table-cell::before {
 	content: '\263A';
 	font-size: 50px;
 	color: #fff;
 	padding: 0 20px 0 10px;
-	vertical-align: middle;
 }
 
 .tasks-table-cell {
@@ -738,4 +752,26 @@ footer {
 	font-size: 12px;
 	padding-top: 60px;
 	font-weight: 500;
+}
+
+
+@media screen and (min-width: 1024px)
+html {
+    font-size: 15px;
+
+}
+
+@media screen and (min-width: 768px)
+html {
+    font-size: 14px;
+}
+
+@media screen and (min-width: 640px)
+html {
+    font-size: 13px;
+}
+
+@media screen and (min-width: 480px)
+html {
+    font-size: 12px;
 }
